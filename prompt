@@ -1,0 +1,34 @@
+case "$SHELL" in
+
+        "/bin/bash")
+                echo "Bash"
+                bold='\[`tput bold`\]'
+                black='\[`tput setaf 0`\]' #   0  Black
+                red='\[`tput setaf 1`\]'  #   1 Red
+                green='\[`tput setaf 2`\]'  #   2 Green
+                yellow='\[`tput setaf 3`\]'  #  3 Yellow
+                blue='\[`tput setaf 4`\]'  #  4 Blue
+                magenta='\[`tput setaf 5`\]'  #   5 Magenta
+                cyan='\[`tput setaf 6`\]'  #  6 Cyan
+                white='\[`tput setaf 7`\]'  #   7 White
+                reset='\[`tput sgr0`\]'
+
+                PS1="$cyan\u$reset@$green\h$reset|$yellow\W$reset\n> "
+
+                ;;
+        "/bin/zsh")
+                echo "Zsh"
+                black='%{%F{black}%}'  #    Black
+                red='%{%F{red}%}'  #    Red
+                green='%{%F{green}%}'  #   2 Green
+                yellow='%{%F{yellow}%}'  #    Yellow
+                blue='%{%F{blue}%}'  #    Blue
+                magenta='%{%F{magenta}%}'  #    magenta
+                cyan='%{%F{cyan}%}'  #  6 Cyan
+                white='%{%f%}'  #   7 White
+
+                PS1="$cyan%n$white@$green%m$white|$yellow%~$white"$'\n'"> "
+
+                ;;
+esac
+
